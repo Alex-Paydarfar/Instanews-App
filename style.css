@@ -514,8 +514,27 @@ background-color: #000000;
 footer {
   color: #c2c2c2
 }
-
-
+select {
+  position: absolute;
+  top: 950px;
+  right: 390px;
+}
+.container {
+  display: flex;
+  text-align: center;
+}
+.choose {
+  flex: 1;
+  order: 2;
+}
+img {
+  flex: 1;
+  order: 1;
+}
+select {
+  flex: 1;
+  order: 3;
+}
 
 
 
