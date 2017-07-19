@@ -1,2 +1,3 @@
 assets/*
 .DS-Store
+node_modules/
