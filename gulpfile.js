@@ -1,22 +1,19 @@
 //requiring packages
 var gulp = require('gulp'),
-uglify = require('gulp-uglify'),
-rename = require('gulp-rename');
-watch = require('gulp-watch'),
-browserSync = require('browser-sync');
-// eslint = require('eslint');   //eslint one
-eslint = require('gulp-eslint');
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename');
+    watch = require('gulp-watch'),
+    browserSync = require('browser-sync').create();
+    eslint = require('gulp-eslint');
 
 //Gulp tasks below
 
 //Gulp script tasks
-gulp.task('scripts', ['lint'],function(){
+gulp.task('scripts',function(){
 gulp.src('./js/*.js')
-.pipe(uglify()) //call the uglify function on the files
-.pipe(rename({extname: '.min.js'})) //rename uglified file
+.pipe(uglify()) 
+.pipe(rename({extname: '.min.js'})) 
 .pipe(gulp.dest('./build/js'))
-// .pipe(gulp.dest)
-// .pipe(eslint)  //eslint two
 });
 
 
@@ -44,6 +41,7 @@ gulp.task('browser-sync', function() {
     }
   });
   gulp.watch('build/js/*.js').on('change', browserSync.reload);
+  
 });
 
  //Gulp watch function 
@@ -62,4 +60,4 @@ gulp.task('watch', function(){
 // // use default task to launch Browser sync and watch JS files
 // gulp.task('default', ['js'], function () {
 
-gulp.task('default'['watch', 'browserSync']);
+gulp.task('default', ['lint', 'watch', 'browser-sync']);
