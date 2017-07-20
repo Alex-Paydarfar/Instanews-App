@@ -1,30 +1,30 @@
+
+
+/************************* Step one ****************************/
+
 //requiring packages
+
 var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
     watch = require('gulp-watch'),
-    browserSync = require('browser-sync').create();
-    eslint = require('gulp-eslint');
+    browserSync = require('browser-sync').create(),
+    eslint = require('gulp-eslint'),
+    autoprefixer = require('gulp-autoprefixer');
+
+/************************* Step Two ****************************/
 
 //Gulp tasks below
 
-//Gulp script tasks
 gulp.task('scripts',function(){
 gulp.src('./js/*.js')
 .pipe(uglify()) 
 .pipe(rename({extname: '.min.js'})) 
 .pipe(gulp.dest('./build/js'))
 });
-
-
-gulp.task('lint', () => {
-    // ESLint ignores files with "node_modules" paths. 
-    // So, it's best to have gulp ignore the directory as well. 
-    // Also, Be sure to return the stream from the task; 
-    // Otherwise, the task may end before the stream has finished. 
-    return gulp.src(['./js/*.js','!./node_modules/**'])
-        // eslint() attaches the lint output to the "eslint" property 
-        // of the file object so it can be used by other modules. 
+gulp.task('lint', function () {
+    return gulp.src(['./js/*.js'])
+        .pipe(eslint())
         .pipe(eslint.format())
         .pipe(eslint.failAfterError());
 });
@@ -34,6 +34,15 @@ gulp.task('say_hello', function() {
 console.log('hello');
 });
 
+gulp.task('autoprefixer', () =>
+    gulp.src('css/*.css')
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+          .pipe(rename({extname: '.min.css'})) 
+          .pipe(gulp.dest('./build/css'))
+);
 gulp.task('browser-sync', function() {
   browserSync.init({
       server: {
@@ -41,23 +50,25 @@ gulp.task('browser-sync', function() {
     }
   });
   gulp.watch('build/js/*.js').on('change', browserSync.reload);
-  
+  gulp.watch('build/css/*.sass').on('change', browserSync.reload);
 });
 
  //Gulp watch function 
+
 gulp.task('watch', function(){
   gulp.watch('js/*.js'),['scripts']
 });
 
-//gulp default task should be at the bottom
-// create a task that ensures the `js` task is complete before
-// reloading browsers
-// gulp.task('js-watch', ['js'], function (done) {
-//     browserSync.reload();
-//     done();
-// });
+// including plugins
 
-// // use default task to launch Browser sync and watch JS files
-// gulp.task('default', ['js'], function () {
+var gulp = require('gulp')
+, minifyHtml = require("gulp-minify-html");
+ 
+// task
 
-gulp.task('default', ['lint', 'watch', 'browser-sync']);
+gulp.task('minify-html', function () {
+    gulp.src('./Html/*.html') // path to your files
+    .pipe(minifyHtml())
+    .pipe(gulp.dest('./build/js'));
+});
+gulp.task('default', ['lint','watch', 'autoprefixer', 'browser-sync']);
