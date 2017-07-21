@@ -494,7 +494,10 @@ template {
   .options {
     text-align: center;
     width: auto;
-    vertical-align: middle; }
+    vertical-align: middle;
+    position: absolute;
+    top: 400px;
+    left: 410px; }
   .image-container {
     vertical-align: middle;
     position: absolute;
@@ -510,7 +513,8 @@ template {
     color: #c2c2c2;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
-            flex: 0 1 50%; }
+            flex: 0 1 50%;
+    right: 200px; }
   .section {
     position: absolute;
     -webkit-box-flex: 0;
@@ -540,15 +544,18 @@ template {
   .options {
     text-align: center;
     width: auto;
-    vertical-align: middle; }
+    vertical-align: middle;
+    position: absolute;
+    top: 400px;
+    left: 410px; }
   .image-container {
     vertical-align: middle;
-    top: 250px;
-    left: 160px;
     position: absolute;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
-            flex: 0 1 50%; }
+            flex: 0 1 50%;
+    top: 280px;
+    left: 150px; }
   footer {
     position: absolute;
     top: 650px;
@@ -556,11 +563,12 @@ template {
     color: #c2c2c2;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
-            flex: 0 1 50%; }
+            flex: 0 1 50%;
+    right: 200px; }
   .section {
     position: absolute;
-    top: 500px;
-    left: 209px;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
-            flex: 0 1 50%; } }
+            flex: 0 1 50%;
+    top: 330px;
+    left: 410px; } }

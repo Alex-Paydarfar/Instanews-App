@@ -71,6 +71,9 @@ body {
             text-align: center;                //drop-down menu
             width: auto;
             vertical-align: middle;
+            position: absolute;
+            top: 400px;
+            left: 410px;
     }
     .image-container {                         // image container
         vertical-align: middle;
@@ -85,6 +88,7 @@ body {
       left: 150px;
       color: #c2c2c2;
       flex: 0 1 50%;
+      right: 200px;
 }
 .section {                                     //choose an option
     position: absolute;
@@ -114,13 +118,16 @@ body {
             text-align: center;                //drop-down menu
             width: auto;
             vertical-align: middle;
+            position: absolute;
+            top: 400px;
+            left: 410px;
     }
     .image-container {                         // image container
         vertical-align: middle;
-        top: 250px;
-        left: 160px;
         position: absolute;
         flex: 0 1 50%;
+        top: 280px;
+        left: 150px;
     }
       footer {                                 // footer
       position: absolute;
@@ -128,12 +135,13 @@ body {
       left: 150px;
       color: #c2c2c2;
       flex: 0 1 50%;
+      right: 200px;
 }
 .section {                                     //choose an option
     position: absolute;
-    top: 500px;
-    left: 209px;
     flex: 0 1 50%;
+    top: 330px;
+    left: 410px;
 }
 }
 
