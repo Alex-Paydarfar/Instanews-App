@@ -7,53 +7,9 @@
 @import "fonts";
 @import "global";
 
-/********************* Desktop *******************************/
 
-@media screen and (min-width: 1000px) {
+/********************** Desktop & Tablet ****************************/
 
-body {
-        font-size: 16px;                       // main body
-        color: #ffffff;
-        background-color: black;
-        position: relative;
-        box-sizing: border-box;
-        display: flex;
-        font-family: OpenSans-Light;
-    }
-    .main.container{
-        display: flex;                         //Parent container
-        text-align: center;
-    }
-    .options {
-            text-align: center;                //drop-down menu
-            width: auto;
-            vertical-align: middle;
-    }
-    .image-container {                         // image container
-        vertical-align: middle;
-        top: 250px;
-        left: 160px;
-        position: absolute;
-        flex: 0 1 50%;
-    }
-      footer {                                 // footer
-      position: absolute;
-      top: 650px;
-      left: 150px;
-      color: #c2c2c2;
-      flex: 0 1 50%;
-}
-.section {                                     //choose an option
-    position: absolute;
-    top: 500px;
-    left: 209px;
-    flex: 0 1 50%;
-}
-}
-
-/********************** Tablet ****************************/
-
-@media (min-width:600px) and (max-width:1000px) {
  body {
         font-size: 16px;                       // main body
         color: #ffffff;
@@ -61,11 +17,15 @@ body {
         position: relative;
         box-sizing: border-box;
         display: flex;
-         font-family: OpenSans-Light;
+        font-family: OpenSans-Light;
+        outline: none;
     }
     .main.container{
         display: flex;                         //Parent container
         text-align: center;
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
     }
     .options {
             text-align: center;                //drop-down menu
@@ -89,6 +49,7 @@ body {
       color: #c2c2c2;
       flex: 0 1 50%;
       right: 200px;
+      text-align: center;
 }
 .section {                                     //choose an option
     position: absolute;
@@ -96,11 +57,11 @@ body {
     top: 330px;
     left: 410px;
 }
-}
+
 
 /********************** Mobile ****************************/
 
-@media screen and (max-width: 600px) {
+@media (max-width:600px) {
     body {
         font-size: 16px;                       // main body
         color: #ffffff;
@@ -119,8 +80,8 @@ body {
             width: auto;
             vertical-align: middle;
             position: absolute;
-            top: 400px;
-            left: 410px;
+            top: 560px;
+            left: 210px;
     }
     .image-container {                         // image container
         vertical-align: middle;
@@ -137,11 +98,14 @@ body {
       flex: 0 1 50%;
       right: 200px;
 }
+    footer p {
+        position: fixed;
+    }
 .section {                                     //choose an option
     position: absolute;
     flex: 0 1 50%;
-    top: 330px;
-    left: 410px;
+    top: 500px;
+    left: 210px;
 }
 }
 
