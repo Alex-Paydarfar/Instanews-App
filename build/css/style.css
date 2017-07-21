@@ -395,8 +395,8 @@ template {
 
 @font-face {
   font-family: 'OpenSans-BoldItalic';
-  src: url("OpenSans-BoldItalic.eot");
-  src: url("OpenSans-BoldItalic.woff2") format("woff2"), url("OpenSans-BoldItalic.woff") format("woff"), url("OpenSans-BoldItalic.ttf") format("truetype"), url("OpenSans-BoldItalic.svg#OpenSans-BoldItalic") format("svg"), url("OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype");
+  src: url("css/fonts/OpenSans-BoldItalic.eot");
+  src: url("css/fonts/OpenSans-BoldItalic.woff2") format("woff2"), url("css/fonts/OpenSans-BoldItalic.woff") format("woff"), url("css/fonts/OpenSans-BoldItalic.ttf") format("truetype"), url("css/fonts/OpenSans-BoldItalic.svg#OpenSans-BoldItalic") format("svg"), url("css/fonts/OpenSans-BoldItalic.eot?#iefix") format("embedded-opentype");
   font-weight: normal;
   font-style: normal; }
 
