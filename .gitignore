@@ -1,7 +1,17 @@
+# Ignore OS files #
+# =============== #
+.DS_Store
 .DS_Store?
 .vscode/
-.DS-Store
-node_modules/
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+*[Tt]humbs.db
+*.Trashes
+
+# Ignore packages #
+# =============== #
 *.7z
 *.dmg
 *.gz
@@ -10,3 +20,10 @@ node_modules/
 *.rar
 *.tar
 *.zip
+
+# Ignore packages #
+# =============== #
+node_modules/
+
+# Ignore API Keys
+# apikeys
