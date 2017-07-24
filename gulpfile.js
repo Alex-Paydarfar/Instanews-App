@@ -46,9 +46,9 @@ gulp.task('browser-sync', function() {                //task to run browser-sync
 
  //Gulp watch function 
 
-gulp.task('watch', function(){                         //task to run watch
-  gulp.watch('js/.*js',['scripts']);                   // task is watching script js folder with .js file
-  gulp.watch('css/*.scss',['sass']);                   // task is watching sass css folder with .scss 
+  gulp.task('watch', function(){                         //task to run watch
+  gulp.watch('./js/.*js',['scripts']);                   // task is watching script js folder with .js file
+  gulp.watch('./css/*.scss',['sass']);                   // task is watching sass css folder with .scss 
 });
 
 //sass task

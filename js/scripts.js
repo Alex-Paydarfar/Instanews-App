@@ -1,41 +1,58 @@
+$(function () {
 
+  var url = 'https://api.nytimes.com/svc/topstories/v2/';
+  var selectionName = $('.selection').val();
 
-$(function(){
-
-  $('.selection').on('change', function() {
-    var sectionName = $(this).val();
+  $('.selection').on('change', function () {
+    event.preventDefault();
+    
+    var sectionName = $('.selection').val();
+    
+    console.log('hello', sectionName);
+    
     var url = 'https://api.nytimes.com/svc/topstories/v2/';
-        url += sectionName;
-        url += '.json';
-        url += '?' + $.param({'api-key': '3fc490bb28d84fe080a965aee4f72b45'
-                });
-
+    url += sectionName;
+    url += '.json';
+    url += '?' + $.param({
+      'api-key': '3fc490bb28d84fe080a965aee4f72b45'
+    });
+    
     $.ajax({
       url: url,
       method: 'GET'
-    }).done(function(result) {
+    })
 
-      $.each(result.results, function( key, value ){
+    .done(function (data) {
+      var i = 0;
+      var results = data.results;
+      var x = [];
+      console.log(data);
 
+      $.each(results, function (key, value) {
         var storyAbstract = value.abstract;
+        console.log(storyAbstract);
         var storyUrl = value.url;
-        var storyPhoto = value.multimedia[4].url;
-         
-        var style = "background-image:url('" + storyPhoto + "')";
-        var storyListItem = '<li class="story-items"><a href="' + storyUrl + '" target="_blank">';
-            storyListItem += '<div class="photo" style="' + style + '"><p class="list-text">';
-            storyListItem += storyAbstract;
-            storyListItem += '</p></div></a></li>';
-
-
-        $('.article-list').append(story-items);
-      });
-
-    }).fail(function(err) {
-      throw err;
+        var storyPhoto = results[0].multimedia[4].url;
+        var arrayPhoto = value.multimedia;
+        if (arrayPhoto.length) {
+          x.push(data.results[i])
+          results = x.slice(0, 12);
+          i++;
+        } else {
+          i++;
+        }
+        console.log(results, x);
+        var style = 'background-image:url(' + storyPhoto + ');';
+        console.log(style);
+        var storyListItem = '<li class="story-items"><a href=' + storyUrl + ' target="_blank">';
+        storyListItem += '<div class="photo" style="height: 200px; ' + style + '"><p class="list-text">';
+        storyListItem += storyAbstract;
+        storyListItem += '</p></div></a></li>';
+        $('.article-list').append(storyListItem);
+      }); // close .each
+    })
+    .fail(function (err) {
+      throw err
     });
-
-  }); 
-
-
+   }); // end doc.ready
 });
