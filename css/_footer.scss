@@ -1,0 +1,38 @@
+footer {                                 // footer
+      position: absolute;
+      top: 650px;
+      left: 150px;
+      color: #c2c2c2;
+      flex: 0 1 50%;
+      right: 200px;
+}
+    footer p {
+        position: fixed;
+    }
+
+
+    /*Desktop */
+
+       footer {                                 // footer
+      position: absolute;
+      top: 650px;
+      left: 150px;
+      color: #c2c2c2;
+      flex: 0 1 50%;
+      right: 200px;
+      text-align: center;
+      font-family: OpenSans;
+}
+
+/*Mobile */ 
+    footer {                                 // footer
+      position: absolute;
+      top: 650px;
+      left: 150px;
+      color: #c2c2c2;
+      flex: 0 1 50%;
+      right: 200px;
+}
+    footer p {
+        position: fixed;
+    }

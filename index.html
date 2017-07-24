@@ -8,6 +8,7 @@
   <meta name="description" content="New York Times Instanews Web Application">
   <title>Instanews App</title>
   <link rel="stylesheet" href="build/css/style.min.css">
+  <link rel="stylesheet" href="selectric.css">
 </head>
 
 <body>
@@ -19,19 +20,29 @@
       <p>Choose a section</p>
     </div>
     <div class="options">
-      <select> 
-<option>Science</option>
-<option>Technology</option>
-<option>Fashion</option>
+      <select class="selection">
+<option disabled selected>Section...</option>         
+<option value="sports">Sports</option>
+<option value="world">World</option>
+<option value="U.S.">U.S.</option>
+<option value="Business">Business</option>
+<option value="books">Books</option>
 </select>
     </div>
+<ul class="article-list">
+<li class="story-items"></li>  
+</ul>
+<p class="list-text"></p>
+<div class="photo"></div>
 <footer>
   <p>&copy Copyright 2017 INSTANEWS</p>
   </footer> 
   </section>  
-  <script src="js/script.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/scripts.js"></script>
+  <script src="build/js/scripts.min.js"></script> 
+  <script src="jquery.selectric.min.js"></script> 
 </body>
 
 </html>

@@ -10,10 +10,10 @@ var gulp = require('gulp'),                            //require gulp
     watch = require('gulp-watch'),                    //Require gulp-watch
     browserSync = require('browser-sync').create(),   //require browser-sync
     eslint = require('gulp-eslint'),                  //require gulp-eslint
-    autoprefixer = require('gulp-autoprefixer');      //require gulp-autoprefixer
+    autoprefixer = require('gulp-autoprefixer'),      //require gulp-autoprefixer
     cssnano = require('gulp-cssnano'),                //require gulp-cssnano
-    sass = require('gulp-sass');                      //require gulp-sass
-    prettyError = require('gulp-prettyerror');        //require gulp-prettyerror
+    sass = require('gulp-sass'),                      //require gulp-sass
+    prettyError = require('gulp-prettyerror'),        //require gulp-prettyerror
     minifyHtml = require("gulp-minify-html");         //require gulp-minify-html
 
 /************************* Step Two ****************************/
@@ -30,18 +30,18 @@ gulp.src('./js/*.js')                                 //on gulp js folder for al
 gulp.task('lint', function () {                       //task to run lint function
     return gulp.src(['./js/*.js'])                    //go to gulp source in js folder and grab all files with .js
         .pipe(eslint())                               //pipe eslint
-        .pipe(eslint.format())                        //????
-        .pipe(eslint.failAfterError());               // /???????
+        .pipe(eslint.format())                        
+        .pipe(eslint.failAfterError());              
 });
  
 gulp.task('browser-sync', function() {                //task to run browser-sync
-  browserSync.init({                                  // ???
-      server: {                                       //???
-      basedir: "./"                                   //???
+  browserSync.init({                                  
+      server: {                                      
+      basedir: "./"                                   
     }
   });
-  gulp.watch('build/js/*.js').on('change', browserSync.reload);            //???
-  gulp.watch('build/css/*.min.css').on('change', browserSync.reload);      //???
+  gulp.watch('build/js/*.js').on('change', browserSync.reload);            
+  gulp.watch('build/css/*.min.css').on('change', browserSync.reload);      
 });
 
  //Gulp watch function 
@@ -56,13 +56,13 @@ gulp.task('watch', function(){                         //task to run watch
 gulp.task('sass', function() {                          // task to run sass function
    gulp.src('./css/style.scss')                         // go to css/style
       .pipe(prettyError())                              // for sass task get prettyError 
-      .pipe(sass())                                     //??
+      .pipe(sass())                                    
       .pipe(autoprefixer({                              //apply autoprefixer
-         browsers: ['last 2 versions']                  //???
+         browsers: ['last 2 versions']                 
       }))
       .pipe(gulp.dest('./build/css'))                   // put changes in build/css
-      .pipe(cssnano())                                  // why not pipe cssnano before putting it in destination?
-      .pipe(rename('style.min.css'))                    // why not pipe rename before putting it in build/css
+      .pipe(cssnano())                                 
+      .pipe(rename('style.min.css'))                    
       .pipe(gulp.dest('./build/css'));                  // put the results in build/css
 });
  
