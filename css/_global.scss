@@ -9,7 +9,7 @@ body {
         font-weight: 400;
         outline: none;
     }
-      .main.container{
+      .container{
         display: flex;                         //Parent container
         text-align: center;
         width: 100%;
@@ -24,7 +24,29 @@ body {
             top: 400px;
             left: 410px;
     }
-    .image-container {                         // image container
+        a {
+            color: white;
+            text-decoration: none;
+            @include mobile {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            top: 54px;
+            position: relative;
+            width: 100%;
+            }
+        .article-list {
+        position: relative;
+        flex-wrap: wrap;
+        color: white;
+        display: flex;       
+        font-size: 16px;
+        font-family: 'SansOpen', sans-serif;
+        top: 55px;
+        position: relative;
+         justify-content: center;
+        }
+       .container {                        
         vertical-align: middle;
         position: absolute;
         flex: 0 1 50%;
@@ -34,12 +56,19 @@ body {
       .section {                                     //choose an option
     position: absolute;
     flex: 0 1 50%;
-    top: 330px;
-    left: 410px;
+    
+    right: 380px;
+    top: 350px;
 }
-
+p {
+    color: white;
+}
+img {
+    background-size: cover cover;
+    position: relative;
+}
 @media (max-width:600px) {
-    .main.container{
+    .container{
         display: flex;                         //Parent container
         text-align: center;
     }
@@ -51,11 +80,63 @@ body {
             top: 560px;
             left: 210px;
     }
-    .image-container {                         // image container
+    .container {                         
         vertical-align: middle;
         position: absolute;
         flex: 0 1 50%;
         top: 280px;
         left: 150px;
     }
+    p {
+        color: white;
+    }
 }
+
+a {
+    color: white;
+    text-decoration: none;
+    @include mobile {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 420;
+    }
+}
+.list-text {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    justify-content: center;
+    font-size: 16px;
+    font-family: 'OpenSans', sans-serif;
+    top: 55px;
+    position: relative;
+}
+@include mobile {
+    flex-direction: row;
+}
+.story-items {
+    flex-direction: row;
+    flex-basis: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+    flex-grow: 1;
+    @include mobile {
+        flex-basis: 50%;
+        @include desktop {
+            flex-basis: 25%;
+            height: 420px;
+        }
+    }
+}
+li:hover .content-text {
+    height: 30%;
+}
+img {
+    background-size: cover cover;
+    position: relative;
+}
+        }

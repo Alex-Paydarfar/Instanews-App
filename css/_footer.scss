@@ -1,19 +1,9 @@
-footer {                                 // footer
-      position: absolute;
-      top: 650px;
-      left: 150px;
-      color: #c2c2c2;
-      flex: 0 1 50%;
-      right: 200px;
-}
-    footer p {
-        position: fixed;
-    }
 
 
-    /*Desktop */
 
-       footer {                                 // footer
+/*Desktop */
+      @include desktop {
+      footer {                                 // footer
       position: absolute;
       top: 650px;
       left: 150px;
@@ -23,9 +13,14 @@ footer {                                 // footer
       text-align: center;
       font-family: OpenSans;
 }
+    .copyright {
+        position: relative;
+    }
+}
 
 /*Mobile */ 
-    footer {                                 // footer
+      @include mobile {
+      footer {                                 // footer
       position: absolute;
       top: 650px;
       left: 150px;
@@ -34,5 +29,9 @@ footer {                                 // footer
       right: 200px;
 }
     footer p {
-        position: fixed;
+        position: relative;
     }
+    .copyright {
+        position: relative;
+    }
+}
