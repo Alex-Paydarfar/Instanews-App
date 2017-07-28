@@ -9,8 +9,6 @@ $(function () {
     
     var sectionName = $('.selection').val();
     
-    console.log('hello', sectionName);
-    
     var url = 'https://api.nytimes.com/svc/topstories/v2/';
     url += sectionName;
     url += '.json';
@@ -28,22 +26,18 @@ $(function () {
       var results = data.results;
       var x = [];
 
-      $.each(results, function (key, value) {
+      var newArray = $.grep(results,function(items,index){
+        return items.multimedia.length > 0
+      }).slice(0,12);
+      console.log(newArray);
+
+       var storyListItem = '';
+      $.each(newArray, function (key, value) {
         var storyAbstract = value.abstract;
-        console.log(storyAbstract);
+        console.log(value.multimedia);
         var storyUrl = value.url;
         var storyPhoto = value.multimedia[4].url;
-        // var arrayPhoto = value.multimedia;
-        // if (arrayPhoto.length) {
-        //   x.push(data.results[i])
-        //   results = x.slice(0, 12);
-        //   i++;
-        // } else {
-        //   i++;
-        // }
-        console.log(results, x);
         var style = 'background-image:url(' + storyPhoto + ');';
-        console.log(style);
         var storyListItem = '<li class="story-items"><a href=' + storyUrl + ' target="_blank">';
         storyListItem += '<div class="photo" style="height: 400px; ' + style + '"><p class="list-text">';
         storyListItem += storyAbstract;
