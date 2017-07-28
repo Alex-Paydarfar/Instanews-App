@@ -67,6 +67,19 @@ img {
     background-size: cover cover;
     position: relative;
 }
+
+.photo{
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+}
+
+.list-text{
+    height: 20%;
+    background-color: gray;
+}
 @media (max-width:600px) {
     .container{
         display: flex;                         //Parent container

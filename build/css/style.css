@@ -513,6 +513,19 @@ a {
   a img {
     background-size: cover cover;
     position: relative; }
+  a .photo {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end; }
+  a .list-text {
+    height: 20%;
+    background-color: gray; }
   @media (max-width: 600px) {
     a .container {
       display: -webkit-box;
