@@ -1,0 +1,27 @@
+
+.copyright {
+    top: 0;
+    color: #c2c2c2;
+    text-align: center;
+    font-family: 'opensans', sans-serif;
+    font-weight: lighter;
+    position: absolute;
+    font-size: 1rem;
+    padding-bottom: 2rem;
+    @include tablet {
+        top: 15px;
+    }
+    @include desktop {
+        text-align: left;
+    }
+}
+footer {  
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 85px;
+    @include desktop {
+    justify-content: flex-start;
+    padding-left: 2.1rem;
+    }
+}

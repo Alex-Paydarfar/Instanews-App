@@ -14,6 +14,4 @@ workflow.
 4-Opera, Chrome, Firefox and Safari
 ```
 ----
-![instanews-tablet-initial](https://user-images.githubusercontent.com/23155719/28349069-73c61b56-6bf5-11e7-9897-2270ae39cc9b.png)
-
 

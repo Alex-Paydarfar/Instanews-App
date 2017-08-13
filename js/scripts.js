@@ -1,52 +1,52 @@
 $(function () {
-
-  var url = 'https://api.nytimes.com/svc/topstories/v2/';
-  var selectionName = $('.selection').val()
+    
+  var $loader = $('.loader')
+  var $navigation = $('.navigation')
+  var $articlelist = $('.article-list')
   var $container = $('.container')
-
-  $('.selection').on('change', function () {
-    event.preventDefault();
-    
-    var sectionName = $('.selection').val();
-    
-    var url = 'https://api.nytimes.com/svc/topstories/v2/';
-    url += sectionName;
-    url += '.json';
+  var $image = $('.New-York-Times')
+  $('select').selectric();
+  $loader.hide();
+  $('.selector').on('change', function () {
+    var Input = $('.selector').val();
+    $container.addClass('header-move')
+    $image.addClass('shrink')
+    $loader.show();
+    $navigation.addClass('nav-article-load')
+    var url = 'https://api.nytimes.com/svc/topstories/v2/' + Input + '.json';
     url += '?' + $.param({
       'api-key': '3fc490bb28d84fe080a965aee4f72b45'
     });
-    
+    $articlelist.empty();
+      
     $.ajax({
       url: url,
-      method: 'GET'
+      method: 'GET',
     })
-
-    .done(function (data) {
-      var i = 0;
-      var results = data.results;
-      var x = [];
-
-      var newArray = $.grep(results,function(items,index){
-        return items.multimedia.length > 0
-      }).slice(0,12);
-      console.log(newArray);
-
-       var storyListItem = '';
-      $.each(newArray, function (key, value) {
-        var storyAbstract = value.abstract;
-        console.log(value.multimedia);
-        var storyUrl = value.url;
-        var storyPhoto = value.multimedia[4].url;
-        var style = 'background-image:url(' + storyPhoto + ');';
-        var storyListItem = '<li class="story-items"><a href=' + storyUrl + ' target="_blank">';
-        storyListItem += '<div class="photo" style="height: 400px; ' + style + '"><p class="list-text">';
-        storyListItem += storyAbstract;
-        storyListItem += '</p></div></a></li>';
-        $('.article-list').append(storyListItem);
-      }); // close .each
-    })
-    .fail(function (err) {
+      
+      .always(function () {
+        $loader.hide();
+      })
+      .done(function (data) {
+        var $data = data.results.filter(function (item) {
+          return item.multimedia.length;
+        }).splice(0, 12);
+        $.each($data, function (item, value) {
+          var fullArticle = ''
+          fullArticle += '<li class = "article-item">' + '<a href='
+          fullArticle += value.url + '>'
+          fullArticle += '<div class ="text-container">' + '<p class = "content-text">'
+          fullArticle += value.abstract
+          fullArticle += '</p>'
+          fullArticle += '<img class = "content-container"'
+          fullArticle += 'src="' + value.multimedia[4].url + '" />'
+          fullArticle += '</a>' + '</li>'
+          $articlelist.append(fullArticle);
+        });
+      })
+      
+      .fail(function (err) {
       throw err
-    });
-   }); // end doc.ready
+      });
+  });
 });
