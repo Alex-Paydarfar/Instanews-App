@@ -15,6 +15,7 @@ workflow.
 ```
 ----
 
+<<<<<<< HEAD
 ## Learning
 
 * Better understanding of APIs
@@ -25,3 +26,8 @@ workflow.
 ## Contributor
 
 Alex Paydarfar
+=======
+![screen shot 2017-08-12 at 9 15 16 pm](https://user-images.githubusercontent.com/23155719/29246103-ae2c3a48-7fa3-11e7-932b-59b1ca80a963.png)
+
+![screen shot 2017-08-12 at 9 15 52 pm](https://user-images.githubusercontent.com/23155719/29246108-c12beb66-7fa3-11e7-8797-60abf7f2a583.png)
+>>>>>>> 7b0036fe3076482cf6665a8600f3ea581671cfb9
