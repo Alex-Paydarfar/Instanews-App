@@ -15,3 +15,13 @@ workflow.
 ```
 ----
 
+## Learning
+
+* Better understanding of APIs
+* More Practice using flexbox in this project
+* Using sass to divide the page styling 
+
+
+## Contributor
+
+Alex Paydarfar
