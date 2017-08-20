@@ -2,7 +2,6 @@
     height: auto;
     padding-top: 30px;
 }
-
 .container {
     height: 39rem;
     display: flex;
@@ -45,18 +44,18 @@ body {
 }
 @keyframes New-York-Animation {
     0% {
-        transform: translate(0px, 0px);
+        transform: translate(0px,0px);
     }
     100% {
-        transform: translate(20px, -5px);
+        transform: translate(20px,-5px);
     }
 }
 @keyframes New-York-Animation-tablet {
     0% {
-        transform: translate(0px, 0px);
+        transform: translate(0px,0px);
     }
     100% {
-        transform: translate(-10px, 5px);
+        transform: translate(-10px,5px);
     }
 }
 .section-text {
@@ -64,11 +63,11 @@ body {
     margin-bottom: 16px;
     color: white;
     font-size: 16px;
-    font-family: 'opensans', sans-serif;
+    font-family: 'opensans',sans-serif;
     text-align: center;
 }
 .selector {
-    font-family: 'opensans', sans-serif;
+    font-family: 'opensans',sans-serif;
     font-size: 1.2rem;
     display: block;
     width: 100;
@@ -81,13 +80,11 @@ body {
     animation-fill-mode: forwards;
     animation-iteration-count: 1;
     animation-direction: normal;
-    ;
     @include tablet {
         animation-name: animatetablet;
         margin-right: 200px;
     }
 }
-
 .shrink {
     height: 150px;
     width: 150px;

@@ -1,4 +1,3 @@
-
 .copyright {
     top: 0;
     color: #c2c2c2;
@@ -15,13 +14,13 @@
         text-align: left;
     }
 }
-footer {  
+footer {
     display: flex;
     justify-content: center;
     position: relative;
     top: 85px;
     @include desktop {
-    justify-content: flex-start;
-    padding-left: 2.1rem;
+        justify-content: flex-start;
+        padding-left: 2.1rem;
     }
 }
