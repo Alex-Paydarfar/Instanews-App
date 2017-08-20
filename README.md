@@ -15,7 +15,6 @@ workflow.
 ```
 ----
 
-<<<<<<< HEAD
 ## Learning
 
 * Better understanding of APIs
